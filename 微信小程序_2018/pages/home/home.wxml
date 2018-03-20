@@ -1,0 +1,25 @@
+<!--pages/home/home.wxml-->
+<view class='container'>
+  <view class='swiper-container'>
+  
+    <swiper class='swiper-box' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' bindchange='swiperchange' circular='true'>
+      <block wx:for='{{banners}}' wx:key='id'>
+        <swiper-item>
+          <image bindtap='tapbanner' data-id='{{item.bannerId}}'src='{{item.image}}' class='slide-image' width='100%' mode='aspectFit' height='width*35/75rpx'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class='dots'>
+      <block wx:for='{{banners}}' wx:key='unique'>
+        <view class="dot{{index == swiperCurrent ? 'active':''}}"></view>
+      </block>
+    </view>
+
+  </view>
+
+
+
+
+
+</view>

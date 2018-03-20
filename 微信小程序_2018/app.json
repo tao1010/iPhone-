@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微信小程序练习Demo",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "gray",
+    "selectedColor": "green",
+    "position":"bottom",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath":"images/tabBar/jxwc_campus_normal@2x.png",
+      "selectedIconPath": "images/tabBar/jxwc_campus_selected@2x.png"
+    },{
+      "pagePath":"pages/my/my",
+      "text": "我的",
+      "iconPath": "images/tabBar/jxwc_my_normal@2x.png",
+      "selectedIconPath": "images/tabBar/jxwc_my_selected@2x.png"
+    },{
+      "pagePath":"pages/logs/logs",
+      "text":"日志",
+      "iconPath":"images/tabBar/jxwc_log_normal@2x.png",
+      "selectedIconPath":"images/tabBar/jxwc_log_selected@2x.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}
