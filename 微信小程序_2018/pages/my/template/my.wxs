@@ -1,0 +1,10 @@
+var foo = "'hello world' from comm.wxs";
+var hello = 'asdafasasafsdfdas';
+var bar = function (d) {
+  return d;
+}
+module.exports = {
+  foo: hello,
+  bar: bar
+};
+module.exports.msg = "some msg";

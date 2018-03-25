@@ -1,2 +1,30 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<import src='template/my.wxml' />
+
+<view>方式一:教学大纲</view>
+
+<view>1.请选择班级</view>
+<view class='checkbox'>
+
+  <checkbox checked='{{true}}'>三年级一班</checkbox>
+
+  <checkbox checked='{{true}}'>三年级二班</checkbox>
+
+  <checkbox checked='{{true}}'>三年级三班</checkbox>
+
+  <checkbox checked='{{true}}'>三年级四班</checkbox>
+
+</view>
+
+<view wx:if='{{condition}}'>2.选择标题</view>
+
+<block wx:for="{{[1, 2, 3, 4, 5]}}">
+	    <template is="{{index % 2 == 0 ? 'even' : 'odd'}}"/>
+</block>
+
+
+<view id='tapTest' data-hidden='WeChat' bindtap='tapName'>Click me！</view>
+
+<wxs src="template/my.wxs" module="my"/>
+<view>{{my.foo}}</view>
+<view>{{my.msg}}</view>
