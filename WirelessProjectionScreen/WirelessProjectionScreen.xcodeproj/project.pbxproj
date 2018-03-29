@@ -15,6 +15,13 @@
 		3B7553CD2057C884001F6D96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7553CC2057C884001F6D96 /* main.m */; };
 		3B7553D72057C884001F6D96 /* WirelessProjectionScreenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7553D62057C884001F6D96 /* WirelessProjectionScreenTests.m */; };
 		3B7553E22057C884001F6D96 /* WirelessProjectionScreenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7553E12057C884001F6D96 /* WirelessProjectionScreenUITests.m */; };
+		3BE98B92206B437900F3F844 /* WPBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98B91206B437900F3F844 /* WPBaseController.m */; };
+		3BE98B99206B43BE00F3F844 /* WPNavBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98B98206B43BE00F3F844 /* WPNavBaseController.m */; };
+		3BE98B9C206B43DA00F3F844 /* WPTabBarBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98B9B206B43DA00F3F844 /* WPTabBarBaseController.m */; };
+		3BE98B9F206B43EF00F3F844 /* WPTableBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98B9E206B43EF00F3F844 /* WPTableBaseController.m */; };
+		3BE98BA2206B440C00F3F844 /* WPMyCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA1206B440C00F3F844 /* WPMyCotroller.m */; };
+		3BE98BA5206B441A00F3F844 /* WPHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA4206B441A00F3F844 /* WPHomeController.m */; };
+		3BE98BA8206B442B00F3F844 /* WPBlueToothCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA7206B442B00F3F844 /* WPBlueToothCotroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,20 @@
 		3B7553DD2057C884001F6D96 /* WirelessProjectionScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WirelessProjectionScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7553E12057C884001F6D96 /* WirelessProjectionScreenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WirelessProjectionScreenUITests.m; sourceTree = "<group>"; };
 		3B7553E32057C884001F6D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE98B90206B437900F3F844 /* WPBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPBaseController.h; sourceTree = "<group>"; };
+		3BE98B91206B437900F3F844 /* WPBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPBaseController.m; sourceTree = "<group>"; };
+		3BE98B97206B43BE00F3F844 /* WPNavBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPNavBaseController.h; sourceTree = "<group>"; };
+		3BE98B98206B43BE00F3F844 /* WPNavBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPNavBaseController.m; sourceTree = "<group>"; };
+		3BE98B9A206B43DA00F3F844 /* WPTabBarBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPTabBarBaseController.h; sourceTree = "<group>"; };
+		3BE98B9B206B43DA00F3F844 /* WPTabBarBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPTabBarBaseController.m; sourceTree = "<group>"; };
+		3BE98B9D206B43EF00F3F844 /* WPTableBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPTableBaseController.h; sourceTree = "<group>"; };
+		3BE98B9E206B43EF00F3F844 /* WPTableBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPTableBaseController.m; sourceTree = "<group>"; };
+		3BE98BA0206B440C00F3F844 /* WPMyCotroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPMyCotroller.h; sourceTree = "<group>"; };
+		3BE98BA1206B440C00F3F844 /* WPMyCotroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPMyCotroller.m; sourceTree = "<group>"; };
+		3BE98BA3206B441A00F3F844 /* WPHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPHomeController.h; sourceTree = "<group>"; };
+		3BE98BA4206B441A00F3F844 /* WPHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPHomeController.m; sourceTree = "<group>"; };
+		3BE98BA6206B442B00F3F844 /* WPBlueToothCotroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPBlueToothCotroller.h; sourceTree = "<group>"; };
+		3BE98BA7206B442B00F3F844 /* WPBlueToothCotroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPBlueToothCotroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +126,10 @@
 				3B7553BE2057C884001F6D96 /* AppDelegate.m */,
 				3B7553C02057C884001F6D96 /* ViewController.h */,
 				3B7553C12057C884001F6D96 /* ViewController.m */,
+				3BE98B93206B437D00F3F844 /* Base */,
+				3BE98B8E206B433600F3F844 /* Home */,
+				3BE98B8F206B434100F3F844 /* BlueTooth */,
+				3BE98B8D206B432900F3F844 /* My */,
 				3B7553C32057C884001F6D96 /* Main.storyboard */,
 				3B7553C62057C884001F6D96 /* Assets.xcassets */,
 				3B7553C82057C884001F6D96 /* LaunchScreen.storyboard */,
@@ -130,6 +155,64 @@
 				3B7553E32057C884001F6D96 /* Info.plist */,
 			);
 			path = WirelessProjectionScreenUITests;
+			sourceTree = "<group>";
+		};
+		3BE98B8D206B432900F3F844 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				3BE98BA0206B440C00F3F844 /* WPMyCotroller.h */,
+				3BE98BA1206B440C00F3F844 /* WPMyCotroller.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		3BE98B8E206B433600F3F844 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3BE98BA3206B441A00F3F844 /* WPHomeController.h */,
+				3BE98BA4206B441A00F3F844 /* WPHomeController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3BE98B8F206B434100F3F844 /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				3BE98BA6206B442B00F3F844 /* WPBlueToothCotroller.h */,
+				3BE98BA7206B442B00F3F844 /* WPBlueToothCotroller.m */,
+			);
+			path = BlueTooth;
+			sourceTree = "<group>";
+		};
+		3BE98B93206B437D00F3F844 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3BE98B95206B439900F3F844 /* views */,
+				3BE98B94206B438600F3F844 /* viewControllers */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3BE98B94206B438600F3F844 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BE98B90206B437900F3F844 /* WPBaseController.h */,
+				3BE98B91206B437900F3F844 /* WPBaseController.m */,
+				3BE98B9D206B43EF00F3F844 /* WPTableBaseController.h */,
+				3BE98B9E206B43EF00F3F844 /* WPTableBaseController.m */,
+				3BE98B9A206B43DA00F3F844 /* WPTabBarBaseController.h */,
+				3BE98B9B206B43DA00F3F844 /* WPTabBarBaseController.m */,
+				3BE98B97206B43BE00F3F844 /* WPNavBaseController.h */,
+				3BE98B98206B43BE00F3F844 /* WPNavBaseController.m */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		3BE98B95206B439900F3F844 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +348,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE98BA8206B442B00F3F844 /* WPBlueToothCotroller.m in Sources */,
+				3BE98B99206B43BE00F3F844 /* WPNavBaseController.m in Sources */,
+				3BE98BA5206B441A00F3F844 /* WPHomeController.m in Sources */,
+				3BE98B9F206B43EF00F3F844 /* WPTableBaseController.m in Sources */,
+				3BE98B9C206B43DA00F3F844 /* WPTabBarBaseController.m in Sources */,
 				3B7553C22057C884001F6D96 /* ViewController.m in Sources */,
 				3B7553CD2057C884001F6D96 /* main.m in Sources */,
+				3BE98BA2206B440C00F3F844 /* WPMyCotroller.m in Sources */,
 				3B7553BF2057C884001F6D96 /* AppDelegate.m in Sources */,
+				3BE98B92206B437900F3F844 /* WPBaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

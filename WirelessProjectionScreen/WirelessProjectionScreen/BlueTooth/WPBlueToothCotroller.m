@@ -1,20 +1,20 @@
 //
-//  ViewController.m
+//  WPBlueToothCotroller.m
 //  WirelessProjectionScreen
 //
-//  Created by tao on 2018/3/13.
+//  Created by tao on 2018/3/28.
 //  Copyright © 2018年 tao1010.github.io. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WPBlueToothCotroller.h"
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface WPBlueToothCotroller()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *allocArray;
 
 @end
 
-@implementation ViewController
+@implementation WPBlueToothCotroller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,10 +22,12 @@
     self.view.backgroundColor = [UIColor orangeColor];
     
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kTopHeight, kScreenWidth, kScreenHeight - kTopHeight - kBottomHeight) style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.rowHeight = 80;
+    tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, CGFLOAT_MIN)];
+    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, CGFLOAT_MIN)];
     [self.view addSubview:tableView];
     if (@available(iOS 11.0, *)) {
         tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -64,11 +66,6 @@
         _allocArray = [NSMutableArray new];
     }
     return _allocArray;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
