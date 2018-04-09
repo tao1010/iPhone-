@@ -22,9 +22,20 @@
 	    <template is="{{index % 2 == 0 ? 'even' : 'odd'}}"/>
 </block>
 
-
 <view id='tapTest' data-hidden='WeChat' bindtap='tapName'>Click me！</view>
 
 <wxs src="template/my.wxs" module="my"/>
 <view>{{my.foo}}</view>
 <view>{{my.msg}}</view>
+
+<button
+bindtap='showCompomentDialog'>自定义组件</button>
+
+<toastTest bind:determineevent="onMyEvent"
+           bind:cancleevent="cancleBtn"
+           dialog-hidden="{{isHidden}}"
+           title-msg="{{titleMsg}}"
+           input-hidden="{{inputHidden}}"
+           cancle-btn="{{cancleBtn}}"
+           input-place-halder="{{inputPlaceHolder}}"
+/> 

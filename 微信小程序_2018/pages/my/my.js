@@ -24,7 +24,52 @@ Page({
       { id: 1, unique: 'unique_1' },
       { id: 0, unique: 'unique_0' },
     ],
-    numberArray: [1, 2, 3, 4]
+    numberArray: [1, 2, 3, 4],
+
+    isHidden: true,
+
+    titleMsg: " ",
+
+    inputHidden: false,
+
+    cancleBtn: false,
+
+    inputPlaceHolder: ""
+  },
+
+  onMyEvent: function (e) {
+
+    var that = this;
+
+    console.log("e.detail :", e.detail)
+
+
+    that.setData({
+
+      isHidden: true,
+
+      // inputHidden: false
+
+    })
+  },
+  showCompomentDialog: function () {
+
+    var that = this;
+
+    that.setData({
+
+      isHidden: false,
+
+      titleMsg: "这样真的好吗",
+
+      // inputPlaceHolder: "请输入想要发送的内容",
+
+      inputHidden: true,
+
+      // cancleBtn: true,
+
+    })
+
   },
 
   switch: function (e) {
@@ -87,9 +132,7 @@ Page({
 
     console.log(event)
   },
-
-
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
