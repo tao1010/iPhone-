@@ -19,8 +19,67 @@
     
     [super viewDidLoad];
 //    [self configNSThread];
-
+    [self josephQuestionWithNumber:2 allCount:5];
 }
+
+/**
+ *  约瑟夫问题
+ *  n 个人围成一圈报数，报到 m 的人出列，要求计算删除顺序，并找到最后剩下的那个人。
+ *  number: 报到的数字
+ *  allCount： 总人数
+ */
+- (void)josephQuestionWithNumber:(NSInteger)number allCount:(NSInteger)allCount{
+    
+    /**
+     问题的关键有两点：
+     
+     一是围成了一个圈，那么报数的时候就要考虑到循环遍历。
+     
+     二是被删除的人的表示问题：①如果是数组实现的话，那么就应该是对删除的人做标记，表示其已经被删除，否则你就需要每删除一个人，就要将所有后面的人的位置都向前挪一位；②如果是链表实现的话，那么你删除的时候直接删除表示该人的节点就好。
+     
+     */
+    
+    NSInteger remain = allCount;//剩余人数
+    NSMutableArray *allCountArray = [[NSMutableArray alloc] init];
+    //每个人进行编号处理
+    for (int i = 0; i < allCount; i ++) {
+        
+        [allCountArray addObject:@(i+1)];
+    }
+    //循环知道最后一位
+    NSInteger count = 0;//依次计数 - 对比报到数据
+    while (remain > 1) {
+        
+        for (int i = 0; i < allCount; i ++) {
+            
+            if (allCountArray[i] != 0) {
+                
+                count ++;
+                if(count == number){
+                    //将要删除的数据替换为0
+                    
+                    if (remain > 1) {
+                        
+                        [allCountArray replaceObjectAtIndex:i withObject:@(0)];
+                        count = 0;
+                        remain --;
+                    }else{
+                        for (int i = 0; i < allCount; i ++) {
+                            
+                            if ([allCountArray[i] integerValue] != 0) {
+                                
+                                NSLog(@"这就是最后留下的人的编号:%@",allCountArray[i]);
+                                break;
+                            }
+                        }
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 - (void)invocationOperationAction:(NSObject *)object{
     
