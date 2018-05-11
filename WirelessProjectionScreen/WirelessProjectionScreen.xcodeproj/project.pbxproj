@@ -22,6 +22,7 @@
 		3BE98BA2206B440C00F3F844 /* WPMyCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA1206B440C00F3F844 /* WPMyCotroller.m */; };
 		3BE98BA5206B441A00F3F844 /* WPHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA4206B441A00F3F844 /* WPHomeController.m */; };
 		3BE98BA8206B442B00F3F844 /* WPBlueToothCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE98BA7206B442B00F3F844 /* WPBlueToothCotroller.m */; };
+		3BFF2B8F20A43C5A00513F8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFF2B8E20A43C5A00513F8D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3BE98BA4206B441A00F3F844 /* WPHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPHomeController.m; sourceTree = "<group>"; };
 		3BE98BA6206B442B00F3F844 /* WPBlueToothCotroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPBlueToothCotroller.h; sourceTree = "<group>"; };
 		3BE98BA7206B442B00F3F844 /* WPBlueToothCotroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPBlueToothCotroller.m; sourceTree = "<group>"; };
+		3BFF2B8E20A43C5A00513F8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFF2B8F20A43C5A00513F8D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 				3B7553D52057C884001F6D96 /* WirelessProjectionScreenTests */,
 				3B7553E02057C884001F6D96 /* WirelessProjectionScreenUITests */,
 				3B7553BB2057C884001F6D96 /* Products */,
+				3BFF2B8D20A43C5900513F8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +217,14 @@
 			children = (
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		3BFF2B8D20A43C5900513F8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BFF2B8E20A43C5A00513F8D /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
