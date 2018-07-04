@@ -18,6 +18,100 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
+    
+    NSMutableArray *buttonArray = [NSMutableArray arrayWithCapacity:4];
+    CGSize size = self.view.frame.size;
+    
+    CGFloat width = 100;
+    CGFloat space = (size.width - width * 2) / 3;
+    
+    for (int i = 0; i < 6; i ++) {
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        CGFloat oringin_x = space;
+        if (i == 1 || i == 3 || i == 5) {
+            
+            oringin_x = space * 2 + width;
+        }
+        CGFloat oringin_y = size.height / 2 - width / 2;
+        if (i == 0 || i==1) {
+            
+            oringin_y = size.height / 2 - width / 2 - space - width;
+        }
+        if (i == 4 || i == 5) {
+            
+            oringin_y = size.height / 2 + width / 2 + space;
+        }
+        
+        NSString *title = [NSString stringWithFormat:@"按钮%d",i +1];
+        button.frame = CGRectMake(oringin_x, oringin_y, 100, 100);
+        button.backgroundColor = [UIColor lightGrayColor];
+        button.titleLabel.backgroundColor = [UIColor yellowColor];
+        button.imageView.backgroundColor = [UIColor blueColor];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+        if (i == 4) {
+            if ( arc4random() % 2) {
+                
+                [button setTitle:title forState:UIControlStateNormal];
+            }else{
+                [button setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
+            }
+        }else{
+            
+            [button setTitle:title forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
+        }
+        [self.view addSubview:button];
+        [buttonArray addObject:button];
+    }
+    /**
+     *  UIEdgeInsets insets = {top, left, bottom, right};
+     *  正数就是距相应的边的距离增加，负数就是距相应的距离减少
+     *  button2.currentImage.size.height
+     *  button2.currentImage.size.width
+     *  button2.titleLabel.intrinsicContentSize.height
+     *  button2.titleLabel.intrinsicContentSize.width
+     */
+    
+    //1.图左文右 - 默认
+    UIButton *button1 = [buttonArray objectAtIndex:0];
+    [button1 setImageEdgeInsets:UIEdgeInsetsMake(0,0,0,0)];
+    [button1 setTitleEdgeInsets:UIEdgeInsetsMake(0,0,0,0)];
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button1.currentImage.size),NSStringFromCGSize(button1.titleLabel.intrinsicContentSize));
+    
+    //2.图文居中
+    UIButton *button2 = [buttonArray objectAtIndex:1];
+    [button2 setImageEdgeInsets:UIEdgeInsetsMake(0,0,0,-button2.titleLabel.intrinsicContentSize.width)];
+    [button2 setTitleEdgeInsets:UIEdgeInsetsMake(0,-button2.currentImage.size.width,0,0)];
+    
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button2.currentImage.size),NSStringFromCGSize(button2.titleLabel.intrinsicContentSize));
+    
+    //3.图右文左
+    UIButton *button3 = [buttonArray objectAtIndex:2];
+    [button3 setImageEdgeInsets:UIEdgeInsetsMake(0,0,0,-button3.titleLabel.intrinsicContentSize.width * 2)];
+    [button3 setTitleEdgeInsets:UIEdgeInsetsMake(0,-button3.currentImage.size.width * 2,0,0)];
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button3.currentImage.size),NSStringFromCGSize(button3.titleLabel.intrinsicContentSize));
+    
+    
+    //4.图上文下
+    UIButton *button4 = [buttonArray objectAtIndex:3];
+    [button4 setImageEdgeInsets:UIEdgeInsetsMake(-button4.titleLabel.intrinsicContentSize.height,0,0,-button4.titleLabel.intrinsicContentSize.width)];
+    [button4 setTitleEdgeInsets:UIEdgeInsetsMake(0,-button4.currentImage.size.width,-button4.currentImage.size.height,0)];
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button4.currentImage.size),NSStringFromCGSize(button4.titleLabel.intrinsicContentSize));
+   
+    //5.图文显示其一
+    UIButton *button5 = [buttonArray objectAtIndex:4];
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button5.currentImage.size),NSStringFromCGSize(button5.titleLabel.intrinsicContentSize));
+    
+    //6.图下 文上
+    UIButton *button6 = [buttonArray objectAtIndex:5];
+    [button6 setImageEdgeInsets:UIEdgeInsetsMake(0,0,-button6.titleLabel.intrinsicContentSize.height,-button6.titleLabel.intrinsicContentSize.width)];
+    [button6 setTitleEdgeInsets:UIEdgeInsetsMake(-button6.currentImage.size.height,-button6.currentImage.size.width,0,0)];
+    NSLog(@"image：%@    titleLabel:%@\n",NSStringFromCGSize(button6.currentImage.size),NSStringFromCGSize(button6.titleLabel.intrinsicContentSize));
+    
+    
 //    [self configNSThread];
     [self josephQuestionWithNumber:2 allCount:5];
 }
