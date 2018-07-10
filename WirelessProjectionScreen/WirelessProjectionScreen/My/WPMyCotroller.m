@@ -9,6 +9,7 @@
 #import "WPMyCotroller.h"
 #import "AFNetworking.h"
 #import "HYBHelperKit.h"
+#import "DTCustomView.h"
 
 @interface WPMyCotroller()
 
@@ -132,6 +133,7 @@
 }
 - (IBAction)postAction:(id)sender {
 
+    [DTCustomView showView];
 }
 
 
