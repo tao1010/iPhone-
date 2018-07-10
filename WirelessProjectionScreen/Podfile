@@ -2,9 +2,9 @@ platform :ios,’9.0’
 target ‘WirelessProjectionScreen’ do
 use_frameworks!
 
-pod 'SDWebImage'
 pod 'AFNetworking','3.2.0'
-pod 'HYBHelperKit'
+pod 'HYBHelperKit','0.2.0'
+pod 'SDWebImage','4.3.1'
 project  'WirelessProjectionScreen.xcodeproj'
 
 end	
