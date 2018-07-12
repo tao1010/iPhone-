@@ -2,6 +2,8 @@ platform :ios,’9.0’
 target ‘WirelessProjectionScreen’ do
 use_frameworks!
 
+pod 'JSONModel','1.7.0'
+pod 'MJExtension','3.0.13'
 pod 'AFNetworking','3.2.0'
 pod 'HYBHelperKit','0.2.0'
 pod 'SDWebImage','4.3.1'

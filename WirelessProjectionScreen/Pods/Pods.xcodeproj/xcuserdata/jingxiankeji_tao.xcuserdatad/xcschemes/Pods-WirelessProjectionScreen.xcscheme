@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B24604C35B52848DFA8F9A7B29BF137"
+               BlueprintIdentifier = "E66625C2FDBD6719EA9F968D3CDBB4B1"
                BuildableName = "Pods_WirelessProjectionScreen.framework"
                BlueprintName = "Pods-WirelessProjectionScreen"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B24604C35B52848DFA8F9A7B29BF137"
+            BlueprintIdentifier = "E66625C2FDBD6719EA9F968D3CDBB4B1"
             BuildableName = "Pods_WirelessProjectionScreen.framework"
             BlueprintName = "Pods-WirelessProjectionScreen"
             ReferencedContainer = "container:Pods.xcodeproj">

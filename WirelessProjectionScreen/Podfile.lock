@@ -16,22 +16,28 @@ PODS:
     - AFNetworking/NSURLSession
   - HYBHelperKit (0.2.0):
     - Masonry (~> 1.0.1)
+  - JSONModel (1.7.0)
   - Masonry (1.0.2)
+  - MJExtension (3.0.13)
   - SDWebImage (4.3.1):
     - SDWebImage/Core (= 4.3.1)
   - SDWebImage/Core (4.3.1)
 
 DEPENDENCIES:
   - AFNetworking (= 3.2.0)
-  - HYBHelperKit
-  - SDWebImage
+  - HYBHelperKit (= 0.2.0)
+  - JSONModel (= 1.7.0)
+  - MJExtension
+  - SDWebImage (= 4.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   HYBHelperKit: 504b3ef89778c1d7f4bd8faf0abfeed96cd2e5f9
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   SDWebImage: 09808bac78357b39f8db4ea360c7b5534d785ef4
 
-PODFILE CHECKSUM: b3528b7605b34273d40104d44c4cd2e828fb07ba
+PODFILE CHECKSUM: 99067fcfef86dcabea3c899305d95b9baae96e9c
 
 COCOAPODS: 1.4.0

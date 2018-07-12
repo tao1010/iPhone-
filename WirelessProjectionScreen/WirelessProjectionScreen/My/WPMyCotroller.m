@@ -11,6 +11,11 @@
 #import "HYBHelperKit.h"
 #import "DTCustomView.h"
 
+#import "UIImage+XT.h"
+#import "UIViewController+RunTime.h"
+#import <objc/runtime.h>
+//#import <objc/message.h>
+
 @interface WPMyCotroller()
 
 
@@ -25,12 +30,139 @@
 
 @implementation WPMyCotroller
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    NSLog(@"++++++");
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
 //#MARK -  TODO haha
    
 //    [self testArray];
 //    [self testButton];
+    [self runtimeTest];
+    
+    //系统方法调用 自定义方法 xt_imageNamed(runtime 交换了方法)
+    UIImage *image = [UIImage imageNamed:@"home"];
+    NSDictionary *dic = @{@"k1":@"kkk",@"k2":@"kk"};
+    
+    NSString *hell = dic[@"hah"];
+}
+
+
+- (void)runtimeTest{
+    
+    //1.交换方法
+    Method m1 = class_getClassMethod([WPMyCotroller class], @selector(method1));
+    Method m2 = class_getClassMethod([WPMyCotroller class], @selector(method2));
+    Method m3 = class_getInstanceMethod([WPMyCotroller class],@selector(configNetWorking));
+    method_exchangeImplementations(m1, m2);//类方法 <--> 类方法
+//    method_exchangeImplementations(m1, m3);//类方法 <--> 对象方法
+    [WPMyCotroller method1]; //实际执行的是 m3对应的方法
+    
+    //2.添加类目属性
+    /**
+     
+     */
+    self.haha = @"测试一下";
+    NSLog(@"runtime添加的分类:%@",self.haha);
+    
+    //3.获取类的所有成员变量
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList([WPMyCotroller class], &outCount);
+    //遍历成员变量
+    for (int i = 0; i < outCount; i ++) {
+        //取出i位置对应的成员变量
+        Ivar ivar = ivars[i];
+        const char *name = ivar_getName(ivar);
+        const char *type = ivar_getTypeEncoding(ivar);
+        NSLog(@"成员变量:%s 成员变量类型:%s",name,type);
+    }
+    //释放内存
+    free(ivars);
+    
+    
+}
+
+//重写归档解档方法
+//设置不需要归档解档的属性
+- (NSArray *)ignoredNames{
+    return @[@"_aaa",@"_bbb",@"_ccc"];
+}
+
+//解档方法
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        
+        unsigned int outCount = 0;
+        Ivar *ivars = class_copyIvarList([self class], &outCount);
+        //遍历成员变量
+        for (int i = 0; i < outCount; i ++) {
+            //取出i位置对应的成员变量
+            Ivar ivar = ivars[i];
+            const char *name = ivar_getName(ivar);
+            // 将每个成员变量名转换为NSString对象类型
+            NSString *key = [NSString stringWithUTF8String:name];
+            //忽略不需要归档属性
+            if([[self ignoredNames] containsObject:key]){
+                continue;
+            }
+            // 根据变量名解档取值(任意类型)
+            id value = [aDecoder decodeObjectForKey:key];
+            // 取出的值再设置给属性
+            [self setValue:value forKey:key];
+            // 取值赋值的过程<==> self.age = [aDecoder decodeObjectForKey:@"_age"]
+        }
+        //释放内存
+        free(ivars);
+    }
+    return self;
+}
+
+//归档方法
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    // 获取所有成员变量
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList([self class], &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Ivar ivar = ivars[i];
+        // 将每个成员变量名转换为NSString对象类型
+        const char *name = ivar_getName(ivar);
+        NSString *key = [NSString stringWithUTF8String:name];
+        
+        // 忽略不需要归档的属性
+        if ([[self ignoredNames] containsObject:key]) {
+            continue;
+        }
+        
+        // 通过成员变量名，取出成员变量的值
+        id value = [self valueForKeyPath:key];
+        // 再将值归档
+        [coder encodeObject:value forKey:key];
+        //取值归档的过程 <==> [coder encodeObject:@(self.age) forKey:@"_age"];
+    }
+    free(ivars);
+}
+
+
+
+
++ (void)method1{
+    
+    NSLog(@"方法一");
+}
++ (void)method2{
+    
+    NSLog(@"方法二");
+}
+
++ (void)runtime{
+    
+    NSLog(@"runtime method...");
 }
 
 - (void)testArray{

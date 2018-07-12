@@ -10,4 +10,9 @@
 
 @interface WPMyCotroller : WPBaseController
 
+@property(nonatomic, assign) NSInteger count;
+@property(nonatomic, assign) int number;
+@property(nonatomic, copy) NSString *type;
+@property(nonatomic, strong) NSDictionary *dic;
+
 @end
